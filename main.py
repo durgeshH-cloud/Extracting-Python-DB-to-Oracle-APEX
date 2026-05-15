@@ -32,6 +32,6 @@ def get_items(db: Session = Depends(get_db)):
     return db.query(models.Item).all()
 
 # Get item by ID
-# @app.get("/items/{item_id}")
-# def get_item(item_id: int, db: Session = Depends(get_db)):
-   # return db.query(models.Item).filter(models.Item.id == item_id).first()
+@app.get("/items/{item_id}")
+def get_item(item_id: int, db: Session = Depends(get_db)):
+   return db.query(models.Item).filter(models.Item.id == item_id).first()
