@@ -1,11 +1,26 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
+from pydantic import BaseModel
 import models
 from database import engine, get_db
 
 models.Base.metadata.create_all(bind=engine)
-
 app = FastAPI()
+
+# ----- Hello World
+@app.get("/hello")
+def hello_world():
+    return {"message": Hello, World! This came from Python."}
+
+# ----- Sum of two numbers
+class SumInput(BaseModel):
+    a: float
+    b: float
+
+@app.post("/sum")
+def sum_two_numbers(data :SumInput):
+    result = data.a + data.b
+    return {"a": data.a, "b": data.b, "sum":result}
 
 @app.get("/")
 def root():
