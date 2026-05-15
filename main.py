@@ -10,7 +10,7 @@ app = FastAPI()
 # ----- Hello World
 @app.get("/hello")
 def hello_world():
-    return {"message": Hello, World! This came from Python."}
+    return {"message": "Hello, World! This came from Python."}
 
 # ----- Sum of two numbers
 class SumInput(BaseModel):
