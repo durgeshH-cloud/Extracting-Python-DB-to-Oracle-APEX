@@ -1,12 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 
-load_dotenv() #loads .env file
+# load_dotenv() #loads .env file
 
-# DATABASE_URL = os.environ.get("DATABASE_URL")
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.environ.get("DATABASE_URL")
+# DATABASE_URL = os.getenv("DATABASE_URL")
 # DATABASE_URL = "postgresql://myusers:User#100_@localhost:5432/myappdb"
 
 print("DATABASE_URL: ",DATABASE_URL)
