@@ -7,7 +7,6 @@ import os
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
 # DATABASE_URL = os.getenv("DATABASE_URL")
-# DATABASE_URL = "postgresql://myusers:User#100_@localhost:5432/myappdb"
 
 print("DATABASE_URL: ",DATABASE_URL)
 
